@@ -1,6 +1,15 @@
 <?php
 
+use App\Http\Controllers\Api\DataController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\MapController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +22,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/places/data', [DataController::class, 'places'])->name('places.data'); // DATA TABLE CONTROLLER
+Route::get('/places/api', [DataController::class, 'index'])->name('places.api'); // DATA TABLE CONTROLLER
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', [MapController::class, 'index'])->name('dashboard');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/cari', [HomeController::class, 'cari'])->name('cari');
+    Route::resource('places', PlaceController::class);
 });
+
+Auth::routes();
+
