@@ -34,12 +34,12 @@ class DatabaseSeeder extends Seeder
         echo "Upload/place/* successfully deleted!\n";
         // \App\Models\User::factory(10)->create();
         \App\Models\Place::create([
-            'name' => 'Tugu Digulis',
-            'latitude' => '-0.0554477132152489', 
-            'longitude' => '109.34944360854895',
-            'address' => 'Bansir Laut, Kec. Pontianak Tenggara, Kota Pontianak, Kalimantan Barat',
-            'description' => 'Tugu landwark Kalimantan',
-            'image' => 'tugu digulis.jpg'
+            'name' => 'Rumah Radakng, Pontianak Kalimantan Barat',
+            'latitude' => '-0.046648779135022106', 
+            'longitude' => '109.3201113678288',
+            'address' => 'X83C+62M, Sungai Bangkong, Kec. Pontianak Kota, Kota Pontianak, Kalimantan Barat 78113',
+            'description' => 'Replika balai suku Dayak tradisional, yang dipasang pada pilar yang dicat dan digunakan untuk konser & acara.',
+            'image' => 'rumah radakng.jpg'
 
         ]);
         
