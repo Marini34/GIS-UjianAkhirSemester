@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         \App\Models\User::create([
-            'name' => 'Budi Utomo',
+            'name' => 'Marini',
             'email' => 'superadmin@roles.id',
             'password'=> Hash::make('123456')
         ]);
